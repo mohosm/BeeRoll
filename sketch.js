@@ -49,7 +49,7 @@ function Bee() {
     //background(240,0,0);
     fill(0);
     //ellipse(this.xCor,this.yCor,10,10);
-    image(b,this.xCor,this.yCor,10,10);
+    image(b,this.xCor,this.yCor,20,20);
 
     this.rot = this.rot+PI/20;
 
