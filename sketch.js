@@ -1,6 +1,7 @@
 var allBees = [];
 var i;
 var field;
+var b;
 
 function preload(){
   createCanvas(1280,720);
@@ -9,6 +10,7 @@ function preload(){
 
 function setup(){
   field = loadImage("p5/field.jpg");
+  b = loadImage("bee.png");
   image(field,0,0);
  // background(240,0,0);
 }
@@ -46,7 +48,8 @@ function Bee() {
    //rotate(this.rot);
     //background(240,0,0);
     fill(0);
-    ellipse(this.xCor,this.yCor,10,10);
+    //ellipse(this.xCor,this.yCor,10,10);
+    image(b,this.xCor,this.yCor,10,10);
 
     this.rot = this.rot+PI/20;
 
