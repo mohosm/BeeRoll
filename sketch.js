@@ -65,7 +65,7 @@ function Bee() {
     image(b2,this.xCor,this.yCor,20,20);
     } else if (this.xDirNeg == false && his.yDirNeg == true){
       image(b1,this.xCor,this.yCor,20,20);
-    } else if (this.xDirNeg == true && his.yDirNeg == false){
+    } else if (this.xDirNeg == true && this.yDirNeg == false){
       image(b3,this.xCor,this.yCor,20,20);
     } else {
       image(b4,this.xCor,this.yCor,20,20);
