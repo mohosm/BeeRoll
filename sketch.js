@@ -12,7 +12,7 @@ function preload(){
 }
 
 function setup(){
-  field = loadImage("p5/field.jpg");
+  field = loadImage("field.jpg");
   b1 = loadImage("bee1.png");
   b2 = loadImage("bee2.png");
   b3 = loadImage("bee3.png");
