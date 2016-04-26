@@ -2,7 +2,7 @@ var allBees = [];
 var i;
 var field;
 var b;
-var sat;
+//var sat;
 
 function preload(){
   createCanvas(1280,720);
@@ -17,8 +17,8 @@ function setup(){
 }
 
 function draw(){
-  sat = saturation(110);
-  fill(sat);
+ // sat = saturation(110);
+  fill(alpha(125));
 
   image(field,0,0);
  // background(240,0,0);
