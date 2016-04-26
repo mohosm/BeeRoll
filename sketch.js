@@ -61,9 +61,9 @@ function Bee() {
 
 
 
-    if (this.xDirNeg == false && his.yDirNeg == false){
+    if (this.xDirNeg == false && this.yDirNeg == false){
     image(b2,this.xCor,this.yCor,20,20);
-    } else if (this.xDirNeg == false && his.yDirNeg == true){
+    } else if (this.xDirNeg == false && this.yDirNeg == true){
       image(b1,this.xCor,this.yCor,20,20);
     } else if (this.xDirNeg == true && this.yDirNeg == false){
       image(b3,this.xCor,this.yCor,20,20);
