@@ -25,10 +25,9 @@ function setup(){
 }
 
 function keyPressed() {
-  if (keyCode == LEFT_ARROW && letThereBee == true) {
+  if (keyCode == LEFT_ARROW) {
     letThereBee = false;
-  }
-  if (keyCode == LEFT_ARROW && letThereBee == false) {
+  }else if (keyCode == RIGHT_ARROW) {
     letThereBee = true;
   }
 }
