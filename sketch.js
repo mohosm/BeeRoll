@@ -23,15 +23,6 @@ function setup(){
   image(field,0,0);
  // background(240,0,0);
 }
-
-function keyPressed() {
-  if (keyCode == LEFT_ARROW) {
-    letThereBee = false;
-  }else if (keyCode == RIGHT_ARROW) {
-    letThereBee = true;
-  }
-}
-
 function draw(){
 
   image(field,0,0);
@@ -40,10 +31,22 @@ for (var i = 0; i < allBees.length; i = i+1) {
 allBees[i].randomFly();
 }
 
+fill(0);
+rect(width-50,height-50,50,50);
+
+
 }
 
 
 function mousePressed(){
+    if (mouseX>=width-50 && mouseY >= height-50 && letThereBee == true) {
+    letThereBee = false;
+  }
+  if (mouseX>=width-50 && mouseY >= height-50 && letThereBee == false) {
+    letThereBee = true;
+  }
+  
+  
 
 
   if (letThereBee ==true ){
