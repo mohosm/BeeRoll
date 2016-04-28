@@ -1,10 +1,11 @@
 var allBees = [];
-var i;
 var field;
 var b1;
 var b2;
 var b3;
 var b4;
+
+var letThereBee = true;
 
 function preload(){
   createCanvas(1280,720);
@@ -23,23 +24,46 @@ function setup(){
  // background(240,0,0);
 }
 
+function keyPressed() {
+  if (keyCode === LEFT_ARROW && letThereBee == true) {
+    letThereBee = false;
+  }
+  if (keyCode === LEFT_ARROW && letThereBee == false) {
+    letThereBee = true;
+  }
+}
+
 function draw(){
 
   image(field,0,0);
  // background(240,0,0);
 for (var i = 0; i < allBees.length; i = i+1) {
-allBees[i].drawData();
+allBees[i].randomFly();
 }
 
 }
 
 
 function mousePressed(){
+
+
+  if (letThereBee ==true ){
   allBees.push(new Bee());
+}  else if (letThereBee ==false){
+  for (var j = 0; j < allBees.length; j = j+1) {
+allBees[j].die();
+}
+
+}
+
+
+}
 
 }
 
 function Bee() {
+
+  // for randomFly:
     this.xCor=mouseX;
     this.yCor=mouseY;
     this.xLeader = random(-1,1);
@@ -50,9 +74,18 @@ function Bee() {
     if(this.xLeader > 0){this.xDirNeg = true}else{this.xDirNeg = false };
     if(this.yLeader > 0){this.yDirNeg = true}else{this.yDirNeg = false };
 
-  this.drawData = function() {
+    this.isDead = false;
 
 
+  // for dieFuntion:
+  this.fallSpeed = 0;
+  this.gravity = 0.6;
+
+
+
+
+  this.randomFly = function() {
+    if (this.isDead == false){
    // translate(this.xCor,this.yCor);
    //rotate(this.rot);
     //background(240,0,0);
@@ -98,7 +131,33 @@ if(this.yCor>height){
       this.yCor = this.yCor -random(-3,10) 
   };
 
-  }
+
+}
+
 }
 
 
+this.die = function(){
+  if(mouseX >= this.xCor-10 && mouseX <= this.xCor+10 && mouseY >= this.yCor-10 && mouseY <= this.yCor+10){
+  this.isDead = true;
+  this.yCor = this.yCor + this.speed;
+  this.speed = this.speed + this.gravity;
+
+
+  if ( this.speed < 0.65 && this.yCor > height-10) {
+    this.speed = 0;
+    this.gravity = 0;
+
+
+}
+
+
+}
+
+}
+
+
+
+
+
+}
