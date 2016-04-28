@@ -59,8 +59,6 @@ allBees[j].die();
 
 }
 
-}
-
 function Bee() {
 
   // for randomFly:
