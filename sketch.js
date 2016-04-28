@@ -5,7 +5,7 @@ var b2;
 var b3;
 var b4;
 
-var letThereBee = false;
+var letThereBee = true;
 
 function preload(){
   createCanvas(1280,720);
@@ -25,10 +25,10 @@ function setup(){
 }
 
 function keyPressed() {
-  if (keyCode === LEFT_ARROW && letThereBee == true) {
+  if (keyCode == LEFT_ARROW && letThereBee == true) {
     letThereBee = false;
   }
-  if (keyCode === LEFT_ARROW && letThereBee == false) {
+  if (keyCode == LEFT_ARROW && letThereBee == false) {
     letThereBee = true;
   }
 }
