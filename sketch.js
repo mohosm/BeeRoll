@@ -41,8 +41,7 @@ rect(width-50,height-50,50,50);
 function mousePressed(){
     if (mouseX>=width-50 && mouseY >= height-50 && letThereBee == true) {
     letThereBee = false;
-  }
-  if (mouseX>=width-50 && mouseY >= height-50 && letThereBee == false) {
+  } else if (mouseX>=width-50 && mouseY >= height-50 && letThereBee == false) {
     letThereBee = true;
   }
   
