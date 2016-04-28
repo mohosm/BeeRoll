@@ -5,7 +5,7 @@ var b2;
 var b3;
 var b4;
 
-var letThereBee = true;
+var letThereBee = false;
 
 function preload(){
   createCanvas(1280,720);
