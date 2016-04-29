@@ -1,5 +1,6 @@
 var allBees = [];
 var field;
+var toolbar;
 var b1;
 var b2;
 var b3;
@@ -16,6 +17,7 @@ function preload(){
 function setup(){
   
   field = loadImage("field.jpg");
+  toolbar = loadImage("toolbar.png");
   b1 = loadImage("bee1.png");
   b2 = loadImage("bee2.png");
   b3 = loadImage("bee3.png");
@@ -28,13 +30,14 @@ function setup(){
 function draw(){
 
   image(field,0,0);
+  
  // background(240,0,0);
 for (var i = 0; i < allBees.length; i = i+1) {
 allBees[i].randomFly();
 }
 
 fill(0);
-rect(width-50,height-50,50,50);
+image(toolbar, width-350,height-50,340,40);
 
 
 }
