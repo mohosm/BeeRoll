@@ -4,7 +4,7 @@ var b1;
 var b2;
 var b3;
 var b4;
-
+var beeSound;
 var letThereBee = true;
 
 function preload(){
@@ -13,6 +13,7 @@ function preload(){
 }
 
 function setup(){
+  beeSound = loadSound("bee.mp3");
   field = loadImage("field.jpg");
   b1 = loadImage("bee1.png");
   b2 = loadImage("bee2.png");
@@ -84,7 +85,11 @@ function Bee() {
 
 
   this.randomFly = function() {
+    
+    beeSound.play();
+    beeSound.loop();
     if (this.isDead == false){
+      
    // translate(this.xCor,this.yCor);
    //rotate(this.rot);
     //background(240,0,0);
