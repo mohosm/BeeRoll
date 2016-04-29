@@ -10,7 +10,7 @@ var letThereBee = true;
 
 function preload(){
   createCanvas(1280,720);
-  beeSound = loadSound("bee.mp3");
+ // beeSound = loadSound("bee.mp3");
 
 }
 
@@ -90,8 +90,8 @@ function Bee() {
 
   this.randomFly = function() {
     
-    beeSound.play();
-    beeSound.loop();
+ //   beeSound.play();
+ //   beeSound.loop();
     if (this.isDead == false){
       
    // translate(this.xCor,this.yCor);
