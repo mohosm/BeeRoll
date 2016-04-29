@@ -9,11 +9,12 @@ var letThereBee = true;
 
 function preload(){
   createCanvas(1280,720);
+  beeSound = loadSound("bee.mp3");
 
 }
 
 function setup(){
-  beeSound = loadSound("bee.mp3");
+  
   field = loadImage("field.jpg");
   b1 = loadImage("bee1.png");
   b2 = loadImage("bee2.png");
