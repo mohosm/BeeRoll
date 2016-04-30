@@ -8,6 +8,14 @@ var b4;
 var beeSound;
 var letThereBee = true;
 
+var beehiveBoo = false;
+var flowerBoo = false;
+var addbeeBoo = true;
+var killbeeBoo = false;
+var inspectorBoo = false;
+
+
+
 function preload(){
   createCanvas(1280,720);
  // beeSound = loadSound("bee.mp3");
@@ -28,41 +36,88 @@ function setup(){
  // background(240,0,0);
 }
 function draw(){
-
   image(field,0,0);
-  
- // background(240,0,0);
-for (var i = 0; i < allBees.length; i = i+1) {
+  image(toolbar, width-350,height-50,340,40);
+  for (var i = 0; i < allBees.length; i = i+1) {
 allBees[i].randomFly();
 }
+  
+  
+  
+  
+}
 
-fill(0);
-image(toolbar, width-350,height-50,340,40);
+function addBeehive(){
+}
 
+function addFlower(){
+}
+
+function addBee(){
+  allBees.push(new Bee());
 
 }
 
+function beeKiller(){
+}
+
+function useInspector(){
+  
+}
 
 function mousePressed(){
-    if (mouseX>=width-50 && mouseY >= height-50 && letThereBee == true) {
-    letThereBee = false;
-  } else if (mouseX>=width-50 && mouseY >= height-50 && letThereBee == false) {
-    letThereBee = true;
+  if (mouseY>=height-50 && mouseY<=height-10 && mouseX >= width-350 && mouseX <= width-290){
+   beehiveBoo = true;
+   flowerBoo = false;
+   addbeeBoo = false;
+   killbeeBoo = false;
+   inspectorBoo = false;
+    
+    
+  } else if (mouseY>=height-50 && mouseY<=height-10 && mouseX >= width-280 && mouseX <= width-220){
+   beehiveBoo = false;
+   flowerBoo = true;
+   addbeeBoo = false;
+   killbeeBoo = false;
+   inspectorBoo = false;
+    
+  } else if(mouseY>=height-50 && mouseY<=height-10 && mouseX >= width-210 && mouseX <= width-150){
+   beehiveBoo = false;
+   flowerBoo = false;
+   addbeeBoo = true;
+   killbeeBoo = false;
+   inspectorBoo = false;
+    
+  }else if(mouseY>=height-50 && mouseY<=height-10 && mouseX >= width-140 && mouseX <= width-80){
+  beehiveBoo = false;
+   flowerBoo = false;
+   addbeeBoo = false;
+   killbeeBoo = true;
+   inspectorBoo = false;
+    
+  }else if(mouseY>=height-50 && mouseY<=height-10 && mouseX >= width-70 && mouseX <= width-10){
+  beehiveBoo = false;
+   flowerBoo = false;
+   addbeeBoo = false;
+   killbeeBoo = false;
+   inspectorBoo = true; 
+    
   }
   
   
-
-
-  if (letThereBee ==true ){
-  allBees.push(new Bee());
-}  else if (letThereBee ==false){
-  for (var j = 0; j < allBees.length; j = j+1) {
-allBees[j].die();
-}
-
-}
-
-
+  
+  
+  if (addbeeBoo == true && beehiveBoo == false && flowerBoo == false && killbeeBoo == false && inspectorBoo == false){
+      allBees.push(new Bee());
+  } else if (addbeeBoo == false && beehiveBoo == true && flowerBoo == false && killbeeBoo == false && inspectorBoo == false){
+    
+  } else if(addbeeBoo == false && beehiveBoo == false && flowerBoo == true && killbeeBoo == false && inspectorBoo == false){
+    
+  } else if(addbeeBoo == false && beehiveBoo == false && flowerBoo == false && killbeeBoo == true && inspectorBoo == false){
+    
+  } else if(addbeeBoo == false && beehiveBoo == false && flowerBoo == false && killbeeBoo == false && inspectorBoo == true){
+    
+  }
 }
 
 function Bee() {
