@@ -1,10 +1,14 @@
 var allBees = [];
+var allHives = [];
 var field;
 var toolbar;
 var b1;
 var b2;
 var b3;
 var b4;
+var hive1;
+
+
 var beeSound;
 
 var beehiveBoo = false;
@@ -29,7 +33,7 @@ function setup(){
   b2 = loadImage("bee2.png");
   b3 = loadImage("bee3.png");
   b4 = loadImage("bee4.png");
-
+  hive1 = loadImage("hive.png");
 
   image(field,0,0);
  // background(240,0,0);
@@ -39,6 +43,7 @@ function draw(){
   
   for (var i = 0; i < allBees.length; i = i+1) {
 allBees[i].randomFly();
+allHives[i].displayHive();
 }
   
 image(toolbar, width-350,height-50,340,40);  
@@ -47,6 +52,7 @@ image(toolbar, width-350,height-50,340,40);
 }
 
 function addBeehive(){
+  allHives.push(new Hives());
 }
 
 function addFlower(){
@@ -118,6 +124,22 @@ function mousePressed(){
     
   }
 }
+
+
+function Hives(){
+  this.xHive=mouseX;
+  this.yHive=mouseY;
+  
+  this.displayHive = function(){
+    image(hive1,this.xHive,this.yHive);
+  }
+  
+  
+  
+}
+
+
+
 
 function Bee() {
 
