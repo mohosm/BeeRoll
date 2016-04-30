@@ -44,12 +44,8 @@ function draw(){
   
   for (var i = 0; i < allBees.length; i = i+1) {
 allBees[i].randomFly();
-allHives[i].displayHive();
-}
-  
-
-  
-  
+//allHives[i].displayHive();
+  }
 }
 
 function addBeehive(){
