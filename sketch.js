@@ -6,7 +6,6 @@ var b2;
 var b3;
 var b4;
 var beeSound;
-var letThereBee = true;
 
 var beehiveBoo = false;
 var flowerBoo = false;
@@ -108,7 +107,7 @@ function mousePressed(){
   
   
   if (addbeeBoo == true && beehiveBoo == false && flowerBoo == false && killbeeBoo == false && inspectorBoo == false){
-      allBees.push(new Bee());
+      addBee();
   } else if (addbeeBoo == false && beehiveBoo == true && flowerBoo == false && killbeeBoo == false && inspectorBoo == false){
     
   } else if(addbeeBoo == false && beehiveBoo == false && flowerBoo == true && killbeeBoo == false && inspectorBoo == false){
