@@ -36,12 +36,12 @@ function setup(){
 }
 function draw(){
   image(field,0,0);
-  image(toolbar, width-350,height-50,340,40);
+  
   for (var i = 0; i < allBees.length; i = i+1) {
 allBees[i].randomFly();
 }
   
-  
+image(toolbar, width-350,height-50,340,40);  
   
   
 }
