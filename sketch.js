@@ -49,7 +49,7 @@ function draw(){
   
     for (var j = 0; j < allHives.length; j = j+1) {
 allHives[j].displayHive();
-allBees[i].randomFly();
+allBees[j].randomFly();
   }
   
   
