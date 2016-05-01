@@ -240,9 +240,4 @@ this.die = function(){
 }
 
 }
-
-
-
-
-
 }
