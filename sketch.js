@@ -1,5 +1,6 @@
 var allBees = [];
 var allHives = [];
+var allFlowers = [];
 var field;
 var toolbar;
 var b1;
@@ -7,6 +8,7 @@ var b2;
 var b3;
 var b4;
 var hive1;
+var flower1;
 
 
 var beeSound;
@@ -34,6 +36,7 @@ function setup(){
   b3 = loadImage("bee3.png");
   b4 = loadImage("bee4.png");
   hive1 = loadImage("hive.png");
+  flower1 = loadImage("flower.png");
 
   image(field,0,0);
  // background(240,0,0);
@@ -48,25 +51,10 @@ allBees[i].randomFly();
     for (var j = 0; j < allHives.length; j = j+1) {
 allHives[j].displayHive();
   }
-}
-
-function addBeehive(){
   
-}
-
-function addFlower(){
-}
-
-function addBee(){
- // allBees.push(new Bee());
-
-}
-
-function beeKiller(){
-}
-
-function useInspector(){
-  
+      for (var g = 0; g < allFlowers.length; g = g+1) {
+allFlowers[g].displayFlower();
+  }
 }
 
 function mousePressed(){
@@ -118,7 +106,7 @@ if (mouseX> width-400 && mouseY > height-150){
   } else if (addbeeBoo == false && beehiveBoo == true && flowerBoo == false && killbeeBoo == false && inspectorBoo == false){
     allHives.push(new Hives());
   } else if(addbeeBoo == false && beehiveBoo == false && flowerBoo == true && killbeeBoo == false && inspectorBoo == false){
-    
+    allFlowers.push(new Flower());
   } else if(addbeeBoo == false && beehiveBoo == false && flowerBoo == false && killbeeBoo == true && inspectorBoo == false){
     
   } else if(addbeeBoo == false && beehiveBoo == false && flowerBoo == false && killbeeBoo == false && inspectorBoo == true){
@@ -137,6 +125,14 @@ function Hives(){
   }
 }
 
+
+function Flower(){
+  this.xFlo=mouseX;
+  this.yFlo=mouseY;
+    this.displayFlower = function(){
+    image(flower1,this.xFlo,this.yFlo,60,100);
+  }
+}
 
 
 
