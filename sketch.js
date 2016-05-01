@@ -49,7 +49,7 @@ allBees[i].randomFly();
 }
 
 function addBeehive(){
-  allHives.push(new Hives());
+  
 }
 
 function addFlower(){
@@ -112,7 +112,7 @@ function mousePressed(){
   if (addbeeBoo == true && beehiveBoo == false && flowerBoo == false && killbeeBoo == false && inspectorBoo == false){
       allBees.push(new Bee());
   } else if (addbeeBoo == false && beehiveBoo == true && flowerBoo == false && killbeeBoo == false && inspectorBoo == false){
-    
+    allHives.push(new Hives());
   } else if(addbeeBoo == false && beehiveBoo == false && flowerBoo == true && killbeeBoo == false && inspectorBoo == false){
     
   } else if(addbeeBoo == false && beehiveBoo == false && flowerBoo == false && killbeeBoo == true && inspectorBoo == false){
