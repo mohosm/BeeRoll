@@ -110,7 +110,7 @@ function mousePressed(){
   
   
   
-  
+if (mouseX< width-400 && mouseY < height-150){  
   if (addbeeBoo == true && beehiveBoo == false && flowerBoo == false && killbeeBoo == false && inspectorBoo == false){
       allBees.push(new Bee());
   } else if (addbeeBoo == false && beehiveBoo == true && flowerBoo == false && killbeeBoo == false && inspectorBoo == false){
@@ -122,6 +122,7 @@ function mousePressed(){
   } else if(addbeeBoo == false && beehiveBoo == false && flowerBoo == false && killbeeBoo == false && inspectorBoo == true){
     
   }
+}
 }
 
 
