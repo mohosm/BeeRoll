@@ -46,7 +46,7 @@ for (var i = 0; i < allBees.length; i = i+1) {
 allBees[i].randomFly();
 }
     for (var j = 0; j < allHives.length; j = j+1) {
-allBees[i].randomFly();
+allHives[j].displayHive();
   }
 }
 
