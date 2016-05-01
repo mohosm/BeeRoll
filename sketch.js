@@ -135,7 +135,7 @@ function Hives(){
   this.yHive=mouseY;
   
   this.displayHive = function(){
-    image(hive1,this.xHive,this.yHive,50,65);
+    image(hive1,this.xHive,this.yHive,70,100);
   }
 }
 
