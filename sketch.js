@@ -110,7 +110,9 @@ function mousePressed(){
   
   
   
-if (mouseX< width-400 && mouseY < height-150){  
+if (mouseX> width-400 && mouseY > height-150){
+  println("nyugi van");
+}else{  
   if (addbeeBoo == true && beehiveBoo == false && flowerBoo == false && killbeeBoo == false && inspectorBoo == false){
       allBees.push(new Bee());
   } else if (addbeeBoo == false && beehiveBoo == true && flowerBoo == false && killbeeBoo == false && inspectorBoo == false){
