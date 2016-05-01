@@ -42,10 +42,10 @@ function draw(){
   image(field,0,0);
   image(toolbar, width-350,height-50,340,40);  
   
-  for (var i = 0; i < allBees.length; i = i+1) {
-allBees[i].randomFly();
+//  for (var i = 0; i < allBees.length; i = i+1) {
+//allBees[i].randomFly();
 //allHives[i].displayHive();
-  }
+//  }
   
     for (var j = 0; j < allHives.length; j = j+1) {
 allHives[j].displayHive();
@@ -63,7 +63,7 @@ function addFlower(){
 }
 
 function addBee(){
-  allBees.push(new Bee());
+ // allBees.push(new Bee());
 
 }
 
@@ -137,9 +137,6 @@ function Hives(){
   this.displayHive = function(){
     image(hive1,this.xHive,this.yHive);
   }
-  
-  
-  
 }
 
 
