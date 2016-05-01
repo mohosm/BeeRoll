@@ -43,18 +43,19 @@ function setup(){
 }
 function draw(){
   image(field,0,0);
-  image(toolbar, width-350,height-50,340,40);  
+
   
-for (var i = 0; i < allBees.length; i = i+1) {
-allBees[i].randomFly();
-}
     for (var j = 0; j < allHives.length; j = j+1) {
 allHives[j].displayHive();
   }
   
       for (var g = 0; g < allFlowers.length; g = g+1) {
 allFlowers[g].displayFlower();
-  }
+  }  
+for (var i = 0; i < allBees.length; i = i+1) {
+allBees[i].randomFly();
+}
+  image(toolbar, width-350,height-50,340,40);  
 }
 
 function mousePressed(){
