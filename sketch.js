@@ -111,6 +111,7 @@ if (mouseX> width-400 && mouseY > height-150){
   } else if(addbeeBoo == false && beehiveBoo == false && flowerBoo == true && killbeeBoo == false && inspectorBoo == false){
     allFlowers.push(new Flower());
   } else if(addbeeBoo == false && beehiveBoo == false && flowerBoo == false && killbeeBoo == true && inspectorBoo == false){
+    println("time to kill");
     for (var i = 0; i < allBees.length; i = i+1) {
     if(i.XCor < mouseX +25 && i.XCor > mouseX-5 && i.YCor > mouseY-5 && i.YCor < mouseY+25){
       allBees[i].remove();
