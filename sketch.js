@@ -2,6 +2,13 @@ var allBees = [];
 var allHives = [];
 var allFlowers = [];
 var allDeaths = [];
+var firstnames = [];
+var nicknames = [];
+var lastnames = [];
+var s1s = [];
+var s2s = [];
+var s3s = [];
+var data_table;
 var field;
 var toolbar;
 var b1;
@@ -25,10 +32,27 @@ var inspectorBoo = false;
 function preload(){
   createCanvas(1280,720);
  // beeSound = loadSound("bee.mp3");
+ data_table = loadTable("data.csv", "csv","header");
 
 }
 
 function setup(){
+   for (var r = 0; r < data_table.getRowCount(); r++){
+    var firstname = data_table.get(r, "firstname");
+    var nickname = data_table.get(r, "nickname");
+    var lastname = data_table.get(r, "lastname");
+    var s1 = data_table.get(r, "s1");
+    var s2 = data_table.get(r, "s2");
+    var s3 = data_table.get(r, "s3");
+
+    firstnames[r]=firstname;
+    nicknames[r]=nickname;
+    lastnames[r]=lastname;
+    s1s[r]=s1;
+    s2s[r]=s2;
+    s3s[r]=s3;
+  }
+
   
   field = loadImage("field.jpg");
   toolbar = loadImage("toolbar.png");
@@ -181,6 +205,13 @@ function Bee() {
     this.rot = PI;
     if(this.xLeader > 0){this.xDirNeg = true}else{this.xDirNeg = false };
     if(this.yLeader > 0){this.yDirNeg = true}else{this.yDirNeg = false };
+    this.fn = firstnames[].random();
+    this.nn = nicknames[].random();
+    this.ln = lastnames[].random();
+    this.s11 = s1s[].random();
+    this.s22 = s2s[].random();
+    this.s33 = s3s[].random();
+    println(this.nn);
 
     this.isDead = false;
 
