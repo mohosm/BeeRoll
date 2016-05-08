@@ -92,10 +92,6 @@ function mouseClicked(){
     }
     }
   }
-  
-  
-  if (inspectorBoo == true){}
-}
 function mousePressed(){
   if (mouseY>=height-50 && mouseY<=height-10 && mouseX >= width-350 && mouseX <= width-290){
    beehiveBoo = true;
