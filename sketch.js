@@ -208,9 +208,9 @@ function Bee() {
     this.r1 = floor(random(98));
     this.r2 = floor(random(98));
     this.r3 = floor(random(98));
-    this.r4 = floor(random(9));
-    this.r5 = floor(random(9));
-    this.r6 = floor(random(11));
+    this.r4 = floor(random(12));
+    this.r5 = floor(random(18));
+    this.r6 = floor(random(18));
     
     this.fn = firstnames[this.r1];
     this.nn = nicknames[this.r2];
