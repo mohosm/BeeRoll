@@ -84,7 +84,7 @@ allBees[i].randomFly();
 }
 function mouseClicked(){
   for (var i = 0; i < allBees.length; i = i+1) {
-    if(mouseX<allBees[i].xCor+25 && mouseX>allBees[i].xCor-5 &&mouseY<allBees[i].yCor+25 && mouseY>allBees[i].yCor-5 && inspectorBoo == true){
+    if(mouseX<allBees[i].xCor+30 && mouseX>allBees[i].xCor-10 &&mouseY<allBees[i].yCor+25 && mouseY>allBees[i].yCor-5 && inspectorBoo == true){
     allBees[i].selected = true;
     } else {
     allBees[i].selected = false;
@@ -264,6 +264,9 @@ function Bee() {
       if (this.selected ==true){
       fill(255,0,0);
       ellipse(this.xCor,this.yCor,20,20);
+      strokeWeight(3);
+      fill(255);
+      rectangle(20,height-50,600,50);
       
     };
 
