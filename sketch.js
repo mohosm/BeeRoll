@@ -266,9 +266,6 @@ function Bee() {
       fill(255,0,0);
       ellipse(this.xCor,this.yCor,20,20);
     };
-    strokeWeight(3);
-      fill(255);
-      rectangle(20,height-50,600,50);
 
     this.rot = this.rot+PI/20;
 
