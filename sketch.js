@@ -205,14 +205,21 @@ function Bee() {
     this.rot = PI;
     if(this.xLeader > 0){this.xDirNeg = true}else{this.xDirNeg = false };
     if(this.yLeader > 0){this.yDirNeg = true}else{this.yDirNeg = false };
-    this.fn = firstnames[].random();
-    this.nn = nicknames[].random();
-    this.ln = lastnames[].random();
-    this.s11 = s1s[].random();
-    this.s22 = s2s[].random();
-    this.s33 = s3s[].random();
-    println(this.nn);
-
+    this.r1 = floor(random(firstnames.length));
+    this.r2 = floor(random(nicknames.length));
+    this.r3 = floor(random(lastnames.length));
+    this.r4 = floor(random(s1s.length));
+    this.r5 = floor(random(s2s.length));
+    this.r6 = floor(random(s3s.length));
+    
+    this.fn = firstnames[r1];
+    this.nn = nicknames[r2];
+    this.ln = lastnames[r3];
+    this.s11 = s1s[r4];
+    this.s22 = s2s[r5];
+    this.s33 = s3s[r6];
+    
+  println(this.fn);
     this.isDead = false;
 
 
