@@ -212,12 +212,12 @@ function Bee() {
     this.r5 = floor(random(s2s.length));
     this.r6 = floor(random(s3s.length));
     
-    this.fn = firstnames[r1];
-    this.nn = nicknames[r2];
-    this.ln = lastnames[r3];
-    this.s11 = s1s[r4];
-    this.s22 = s2s[r5];
-    this.s33 = s3s[r6];
+    this.fn = firstnames[this.r1];
+    this.nn = nicknames[this.r2];
+    this.ln = lastnames[this.r3];
+    this.s11 = s1s[this.r4];
+    this.s22 = s2s[this.r5];
+    this.s33 = s3s[this.r6];
     
   println(this.fn);
     this.isDead = false;
