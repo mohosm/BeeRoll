@@ -1,6 +1,7 @@
 var allBees = [];
 var allHives = [];
 var allFlowers = [];
+var allDeaths = [];
 var field;
 var toolbar;
 var b1;
@@ -104,11 +105,20 @@ if (mouseX> width-400 && mouseY > height-150){
 }else{  
   if (addbeeBoo == true && beehiveBoo == false && flowerBoo == false && killbeeBoo == false && inspectorBoo == false){
       allBees.push(new Bee());
+      allDeaths.push(new Death());
   } else if (addbeeBoo == false && beehiveBoo == true && flowerBoo == false && killbeeBoo == false && inspectorBoo == false){
     allHives.push(new Hives());
   } else if(addbeeBoo == false && beehiveBoo == false && flowerBoo == true && killbeeBoo == false && inspectorBoo == false){
     allFlowers.push(new Flower());
   } else if(addbeeBoo == false && beehiveBoo == false && flowerBoo == false && killbeeBoo == true && inspectorBoo == false){
+    for (var i = 0; i < allBees.length; i = i+1) {
+    if(i.XCor < mouseX +25 && i.XCor > mouseX-5 && i.YCor > mouseY-5 && i.YCor < mouseY+25){
+      allBees[i].remove();
+      
+    }
+}
+    
+    
     
   } else if(addbeeBoo == false && beehiveBoo == false && flowerBoo == false && killbeeBoo == false && inspectorBoo == true){
     
@@ -116,7 +126,27 @@ if (mouseX> width-400 && mouseY > height-150){
 }
 }
 
+function Death(){
+  this.Xdeath = mouseX;
+  this.Ydeath = mouseY;
+  this.fallSpeed = 0;
+  this.gravity = 0.6;
+  
+  this.beeDie = function(){
+    image(bee1,this.Xdeath,this.Ydeath,20,20);
+  this.Ydeath = this.Ydeath + this.speed;
+  this.speed = this.speed + this.gravity;
 
+
+  if ( this.speed < 0.65 && this.Ydeath > height-10) {
+    this.speed = 0;
+    this.gravity = 0;
+
+
+}
+    
+  }
+}
 function Hives(){
   this.xHive=mouseX;
   this.yHive=mouseY;
@@ -154,8 +184,7 @@ function Bee() {
 
 
   // for dieFuntion:
-  this.fallSpeed = 0;
-  this.gravity = 0.6;
+  
 
 
 
@@ -219,17 +248,7 @@ if(this.yCor>height){
 
 this.die = function(){
   if(mouseX >= this.xCor-10 && mouseX <= this.xCor+10 && mouseY >= this.yCor-10 && mouseY <= this.yCor+10){
-  this.isDead = true;
-  this.yCor = this.yCor + this.speed;
-  this.speed = this.speed + this.gravity;
-
-
-  if ( this.speed < 0.65 && this.yCor > height-10) {
-    this.speed = 0;
-    this.gravity = 0;
-
-
-}
+  
 
 
 }
