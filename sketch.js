@@ -82,7 +82,14 @@ allBees[i].randomFly();
 }
   image(toolbar, width-350,height-50,340,40);  
 }
-
+function mouseClicked(){
+  for (var i = 0; i < allBees.length; i = i+1) {
+    allBees[i].selected = true;
+  }
+  
+  
+  if (inspectorBoo == true){}
+}
 function mousePressed(){
   if (mouseY>=height-50 && mouseY<=height-10 && mouseX >= width-350 && mouseX <= width-290){
    beehiveBoo = true;
@@ -218,6 +225,7 @@ function Bee() {
     this.s11 = s1s[this.r4];
     this.s22 = s2s[this.r5];
     this.s33 = s3s[this.r6];
+    this.selected = false;
     
   println(this.fn,"'",this.nn,"'",this.ln,"-",this.s11,this.s22,this.s33);
     this.isDead = false;
@@ -252,6 +260,11 @@ function Bee() {
     } else {
       image(b4,this.xCor,this.yCor,20,20);
     }
+      if (this.selected ==true){
+      fill(255,0,0);
+      ellipse(this.xCor,this.yCor,20,20);
+      
+    };
 
 
     this.rot = this.rot+PI/20;
