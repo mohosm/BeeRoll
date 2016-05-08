@@ -88,7 +88,6 @@ function mouseClicked(){
     allBees[i].selected = true;
     } else {
     allBees[i].selected = false;
-      
     }
     }
   }
