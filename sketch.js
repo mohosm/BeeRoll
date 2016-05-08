@@ -219,7 +219,7 @@ function Bee() {
     this.s22 = s2s[this.r5];
     this.s33 = s3s[this.r6];
     
-  println(this.fn," ",this.nn," ",this.ln," - ",this.s11," ",this.s22," ",this.s33);
+  println(this.fn,"'",this.nn,"'",this.ln,"-",this.s11,this.s22,this.s33);
     this.isDead = false;
 
 
