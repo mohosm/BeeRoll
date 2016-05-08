@@ -84,7 +84,13 @@ allBees[i].randomFly();
 }
 function mouseClicked(){
   for (var i = 0; i < allBees.length; i = i+1) {
+    if(mouseX<allBees[i].xCor+25 && mouseX>allBees[i].xCor-5 &&mouseY<allBees[i].yCor+25 && mouseY>allBees[i].yCor-5){
     allBees[i].selected = true;
+    } else {
+    allBees[i].selected = false;
+      
+    }
+    }
   }
   
   
