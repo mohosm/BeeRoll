@@ -262,14 +262,13 @@ function Bee() {
       image(b4,this.xCor,this.yCor,20,20);
     }
       if (this.selected ==true){
+      strokeWeight(1);
       fill(255,0,0);
       ellipse(this.xCor,this.yCor,20,20);
-      strokeWeight(3);
+    };
+    strokeWeight(3);
       fill(255);
       rectangle(20,height-50,600,50);
-      
-    };
-
 
     this.rot = this.rot+PI/20;
 
