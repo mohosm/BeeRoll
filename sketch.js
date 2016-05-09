@@ -89,7 +89,7 @@ allBees[i].randomFly();
   strokeWeight(1);
   fill(0);
   textSize(18);
-  text(texy,15,height-25);  
+  text(texy,15,height-30);  
   
 }
 function mouseClicked(){
