@@ -85,10 +85,10 @@ allBees[i].randomFly();
   
   strokeWeight(3);
   fill(255);
-  rect(0,height-60,600,60);
-  strokeWeight(2);
+  rect(0,height-60,800,60);
+  strokeWeight(1);
   textSize(14);
-  text(texy,15,height-10);  
+  text(texy,15,height-20);  
   
 }
 function mouseClicked(){
