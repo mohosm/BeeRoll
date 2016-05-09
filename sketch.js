@@ -93,7 +93,7 @@ allBees[i].randomFly();
   textSize(18);
   text(texy,15,height-30);  
   if (inspectorBoo == true){
-  image(glass,mouseX+15,mouseY+15,60,60);
+  image(glass,mouseX-15,mouseY-15,60,60);
     
   }
   }
