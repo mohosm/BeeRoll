@@ -94,7 +94,12 @@ allBees[i].randomFly();
   text(texy,15,height-30);  
   if (inspectorBoo == true){
   image(glass,mouseX-15,mouseY-15,60,60);
-    
+  } else if (addbeeBoo == true){
+    image(bee1,mouseX-15,mouseY-15,30,30);
+  } else if (flowerBoo == true){
+    image(flower1,mouseX-15,mouseY-15,60,100);
+  } else if (beehiveBoo == true){
+    image(hive1,mouseX-15,mouseY-15,70,100);
   }
   }
 function mouseClicked(){
