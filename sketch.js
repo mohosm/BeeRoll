@@ -97,7 +97,6 @@ allBees[i].randomFly();
     
   }
   }
-}
 function mouseClicked(){
   for (var i = 0; i < allBees.length; i = i+1) {
     if(mouseX<allBees[i].xCor+50 && mouseX>allBees[i].xCor-30 &&mouseY<allBees[i].yCor+50 && mouseY>allBees[i].yCor-30 && inspectorBoo == true){
