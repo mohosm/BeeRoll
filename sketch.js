@@ -26,6 +26,7 @@ var flowerBoo = false;
 var addbeeBoo = true;
 var killbeeBoo = false;
 var inspectorBoo = false;
+var texy = "";
 
 
 
@@ -81,11 +82,18 @@ for (var i = 0; i < allBees.length; i = i+1) {
 allBees[i].randomFly();
 }
   image(toolbar, width-350,height-50,340,40);  
+  
+  strokeWeight(3);
+  fill(255);
+  rect(0,height-60,600,60);
+  text(texy,15,height-50);  
+  
 }
 function mouseClicked(){
   for (var i = 0; i < allBees.length; i = i+1) {
     if(mouseX<allBees[i].xCor+30 && mouseX>allBees[i].xCor-10 &&mouseY<allBees[i].yCor+25 && mouseY>allBees[i].yCor-5 && inspectorBoo == true){
     allBees[i].selected = true;
+    texy = allBees[i].fn +'"'+allBees[i].nn+'"'+allBees[i].ln+allBees[i].s11+allBees[i].s22+allBees[i].s33;
     } else {
     allBees[i].selected = false;
     }
