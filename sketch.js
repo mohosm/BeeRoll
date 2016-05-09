@@ -87,6 +87,7 @@ allBees[i].randomFly();
   fill(255);
   rect(0,height-60,800,60);
   strokeWeight(1);
+  fill(0);
   textSize(18);
   text(texy,15,height-15);  
   
@@ -95,7 +96,7 @@ function mouseClicked(){
   for (var i = 0; i < allBees.length; i = i+1) {
     if(mouseX<allBees[i].xCor+50 && mouseX>allBees[i].xCor-30 &&mouseY<allBees[i].yCor+50 && mouseY>allBees[i].yCor-30 && inspectorBoo == true){
     allBees[i].selected = true;
-    texy = allBees[i].fn +'"'+allBees[i].nn+'"'+allBees[i].ln+allBees[i].s11+allBees[i].s22+allBees[i].s33;
+    texy = allBees[i].fn +" "+'"'+allBees[i].nn+'"'+" "+allBees[i].ln+" "+allBees[i].s11+" "+allBees[i].s22+" "+allBees[i].s33;
     } else {
     allBees[i].selected = false;
     }
