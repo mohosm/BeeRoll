@@ -17,6 +17,7 @@ var b3;
 var b4;
 var hive1;
 var flower1;
+var glass;
 
 
 var beeSound;
@@ -63,6 +64,7 @@ function setup(){
   b4 = loadImage("bee4.png");
   hive1 = loadImage("hive.png");
   flower1 = loadImage("flower.png");
+  glass = loadImage("glass.png");
 
   image(field,0,0);
  // background(240,0,0);
@@ -90,7 +92,11 @@ allBees[i].randomFly();
   fill(0);
   textSize(18);
   text(texy,15,height-30);  
-  
+  if (inspectorBoo == true){
+  image(glass,mouseX+15,mouseY+15,60,60);
+    
+  }
+  }
 }
 function mouseClicked(){
   for (var i = 0; i < allBees.length; i = i+1) {
