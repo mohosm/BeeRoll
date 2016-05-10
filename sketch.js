@@ -324,6 +324,4 @@ this.die = function(){
 }
     
   }
-
-}
 }
