@@ -253,19 +253,8 @@ function Bee() {
 
 
   this.randomFly = function() {
-    
- //   beeSound.play();
- //   beeSound.loop();
     if (this.isDead == false){
-      
-   // translate(this.xCor,this.yCor);
-   //rotate(this.rot);
-    //background(240,0,0);
     fill(0);
-    //ellipse(this.xCor,this.yCor,10,10);
-
-
-
     if (this.xDirNeg == false && this.yDirNeg == false){
     image(b2,this.xCor,this.yCor,20,20);
     } else if (this.xDirNeg == false && this.yDirNeg == true){
@@ -283,11 +272,10 @@ function Bee() {
 
     this.rot = this.rot+PI/20;
 
-
-     if(this.xCor>width){
+     if(this.xCor>=500){
     this.xDirNeg = true
   }
-      if(this.xCor<0){
+      if(this.xCor<=500){
     this.xDirNeg = false
   }
   if (this.xDirNeg == false){
@@ -296,10 +284,10 @@ function Bee() {
   };
 
 
-if(this.yCor>height){
+if(this.yCor>=500){
     this.yDirNeg = true
   }
-      if(this.yCor<0){
+      if(this.yCor<=500){
     this.yDirNeg = false
   }
   if (this.yDirNeg == false){
