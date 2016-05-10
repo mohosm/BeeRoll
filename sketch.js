@@ -18,6 +18,7 @@ var b4;
 var hive1;
 var flower1;
 var glass;
+var swatter;
 
 
 var beeSound;
@@ -65,6 +66,7 @@ function setup(){
   hive1 = loadImage("hive.png");
   flower1 = loadImage("flower.png");
   glass = loadImage("glass.png");
+  swatter = loadImage("swatter.png");
 
   image(field,0,0);
  // background(240,0,0);
@@ -101,6 +103,9 @@ allBees[i].randomFly();
     image(flower1,mouseX-15,mouseY-15,60,100);
   } else if (beehiveBoo == true){
     image(hive1,mouseX-15,mouseY-15,70,100);
+  } else if (killbeeBoo == true){
+    image(swatter,mouseX-60,mousey-20,80,80);
+    
   }
 }
 function mouseClicked(){
