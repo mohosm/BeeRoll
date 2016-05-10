@@ -306,23 +306,4 @@ if(this.yCor>height){
 }
 
 }
-
-
-this.die = function(){
-  if (this.isDead == true){
-    this.speed = 0;
-  this.gravity = 0.6;
-    image(bee1,this.xCor,this.yCor,20,20);
-  this.yCor = this.yCor + this.speed;
-  this.speed = this.speed + this.gravity;
-
-
-  if ( this.speed < 0.65 && this.yCor > height-10) {
-    this.speed = 0;
-    this.gravity = 0;
-
-
-}
-  }
-  }
 }
