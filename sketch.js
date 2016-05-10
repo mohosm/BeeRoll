@@ -81,12 +81,7 @@ allHives[j].displayHive();
   
 
 for (var i = 0; i < allBees.length; i = i+1) {
-  if(allBees[i].isDead==false){
 allBees[i].randomFly();
-}else{
-allBees[i].die();
-  
-}
 }
   
   image(toolbar, width-350,height-50,340,40);  
