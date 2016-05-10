@@ -104,7 +104,7 @@ allBees[i].randomFly();
   } else if (beehiveBoo == true){
     image(hive1,mouseX-15,mouseY-15,70,100);
   } else if (killbeeBoo == true){
-    image(swatter,mouseX-60,mousey-20,80,80);
+    image(swatter,mouseX-60,mouseY-20,80,80);
     
   }
 }
