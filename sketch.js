@@ -89,7 +89,6 @@ allBees[i].die();
 }
 }
   
-}
   image(toolbar, width-350,height-50,340,40);  
   
   strokeWeight(3);
@@ -108,7 +107,7 @@ allBees[i].die();
   } else if (beehiveBoo == true){
     image(hive1,mouseX-15,mouseY-15,70,100);
   }
-  }
+}
 function mouseClicked(){
   for (var i = 0; i < allBees.length; i = i+1) {
     if(mouseX<allBees[i].xCor+50 && mouseX>allBees[i].xCor-30 &&mouseY<allBees[i].yCor+50 && mouseY>allBees[i].yCor-30 && inspectorBoo == true){
