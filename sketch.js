@@ -82,7 +82,9 @@ allHives[j].displayHive();
   
 
 for (var i = 0; i < allBees.length; i = i+1) {
+  if(allFlowers.length == 0 && allHives.length == 0){
 allBees[i].randomFly();
+}
 }
   
   image(toolbar, width-350,height-50,340,40);  
