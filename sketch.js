@@ -83,6 +83,10 @@ allHives[j].displayHive();
 for (var i = 0; i < allBees.length; i = i+1) {
   if(allBees[i].isDead==false){
 allBees[i].randomFly();
+}else{
+allBees[i].die();
+  
+}
 }
   
 }
@@ -186,28 +190,6 @@ if (mouseX> width-400 && mouseY > height-150){
     
   }
 }
-}
-
-function Death(){
-  this.Xdeath = mouseX;
-  this.Ydeath = mouseY;
-  this.fallSpeed = 0;
-  this.gravity = 0.6;
-  
-  this.beeDie = function(){
-    image(bee1,this.Xdeath,this.Ydeath,20,20);
-  this.Ydeath = this.Ydeath + this.speed;
-  this.speed = this.speed + this.gravity;
-
-
-  if ( this.speed < 0.65 && this.Ydeath > height-10) {
-    this.speed = 0;
-    this.gravity = 0;
-
-
-}
-    
-  }
 }
 function Hives(){
   this.xHive=mouseX;
@@ -328,11 +310,21 @@ if(this.yCor>height){
 
 
 this.die = function(){
-  if(mouseX >= this.xCor-10 && mouseX <= this.xCor+10 && mouseY >= this.yCor-10 && mouseY <= this.yCor+10){
-  
+    this.fallSpeed = 0;
+  this.gravity = 0.6;
+    image(bee1,this.xCor,this.yCor,20,20);
+  this.yCor = this.yCor + this.speed;
+  this.speed = this.speed + this.gravity;
+
+
+  if ( this.speed < 0.65 && this.Ydeath > height-10) {
+    this.speed = 0;
+    this.gravity = 0;
 
 
 }
+    
+  }
 
 }
 }
