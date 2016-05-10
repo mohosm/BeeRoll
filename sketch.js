@@ -310,14 +310,14 @@ if(this.yCor>height){
 
 
 this.die = function(){
-    this.fallSpeed = 0;
+    this.speed = 0;
   this.gravity = 0.6;
     image(bee1,this.xCor,this.yCor,20,20);
   this.yCor = this.yCor + this.speed;
   this.speed = this.speed + this.gravity;
 
 
-  if ( this.speed < 0.65 && this.Ydeath > height-10) {
+  if ( this.speed < 0.65 && this.yCor > height-10) {
     this.speed = 0;
     this.gravity = 0;
 
