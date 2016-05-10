@@ -113,6 +113,7 @@ function mouseClicked(){
      if(mouseX<allBees[i].xCor+50 && mouseX>allBees[i].xCor-30 &&mouseY<allBees[i].yCor+50 && mouseY>allBees[i].yCor-30 && killbeeBoo == true){
     allBees[i].isdead = true;
     allBees[i].remove();
+    println("removed");
     
     }
     }
