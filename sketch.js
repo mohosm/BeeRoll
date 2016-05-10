@@ -1,7 +1,6 @@
 var allBees = [];
 var allHives = [];
 var allFlowers = [];
-var allDeaths = [];
 var firstnames = [];
 var nicknames = [];
 var lastnames = [];
@@ -168,7 +167,6 @@ if (mouseX> width-400 && mouseY > height-150){
 }else{  
   if (addbeeBoo == true && beehiveBoo == false && flowerBoo == false && killbeeBoo == false && inspectorBoo == false){
       allBees.push(new Bee());
-      allDeaths.push(new Death());
   } else if (addbeeBoo == false && beehiveBoo == true && flowerBoo == false && killbeeBoo == false && inspectorBoo == false){
     allHives.push(new Hives());
   } else if(addbeeBoo == false && beehiveBoo == false && flowerBoo == true && killbeeBoo == false && inspectorBoo == false){
