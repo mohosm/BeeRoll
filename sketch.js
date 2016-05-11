@@ -8,7 +8,7 @@ function preload(){
 }
 
 function setup(){
-  field = loadImage("p5/field.jpg");
+  field = loadImage("p5/field.png");
   image(field,0,0);
  // background(240,0,0);
 }
