@@ -244,6 +244,11 @@ function Bee() {
     
   println(this.fn,"'",this.nn,"'",this.ln,"-",this.s11,this.s22,this.s33);
     this.isDead = false;
+    this.movBetX1 = 0;
+    this.movBetX2 = width;
+    this.movBetY1 = 0;
+    this.movBetY2 = height;
+    
 
 
   // for dieFuntion:
@@ -272,10 +277,10 @@ function Bee() {
 
     this.rot = this.rot+PI/20;
 
-     if(this.xCor>=500){
+     if(this.xCor>=movBetX2){
     this.xDirNeg = true
   }
-      if(this.xCor<=500){
+      if(this.xCor<=movBetX1){
     this.xDirNeg = false
   }
   if (this.xDirNeg == false){
@@ -284,10 +289,10 @@ function Bee() {
   };
 
 
-if(this.yCor>=500){
+if(this.yCor>=movBetY2){
     this.yDirNeg = true
   }
-      if(this.yCor<=500){
+      if(this.yCor<=movBetY1){
     this.yDirNeg = false
   }
   if (this.yDirNeg == false){
