@@ -342,7 +342,32 @@ if(allFlowers.length == 0 && allHives.length == 0){
   this.movBetY2 = flowerYs[this.index1];
   
 } else if (allFlowers.length > 0 && allHives.length > 0){
+      this.index1= floor(random(flowerXs.length));
+      this.index2= floor(random(hiveXs.length));
+      if(hiveXs[this.index2]>flowerXs[this.index1] && hiveYs[this.index2] > flowerYs[this.index1]){
+          this.movBetX1 = flowerXs[this.index1];
+          this.movBetX2 = hiveXs[this.index2];
+          this.movBetY1 = flowerYs[this.index1];
+          this.movBetY2 = hiveYs[this.index2];
+      }else if(hiveXs[this.index2]>flowerXs[this.index1] && hiveYs[this.index2] < flowerYs[this.index1]){
+          this.movBetX1 = flowerXs[this.index1];
+          this.movBetX2 = hiveXs[this.index2];
+          this.movBetY1 = hiveYs[this.index2];
+          this.movBetY2 = flowerYs[this.index1];
+        
+      }else if(hiveXs[this.index2]<flowerXs[this.index1] && hiveYs[this.index2] > flowerYs[this.index1]){
+          this.movBetX1 = hiveXs[this.index2];
+          this.movBetX2 = flowerXs[this.index1];
+          this.movBetY1 = flowerYs[this.index1];
+          this.movBetY2 = hiveYs[this.index2];
+        
+      }else if(hiveXs[this.index2]<flowerXs[this.index1] && hiveYs[this.index2] < flowerYs[this.index1]){
+          this.movBetX1 = hiveXs[this.index2];
+          this.movBetX2 = flowerXs[this.index1];
+          this.movBetY1 = hiveYs[this.index2];
+          this.movBetY2 = flowerYs[this.index1];
+        
+      }
 }
-  
 }
 }
