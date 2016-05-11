@@ -75,7 +75,7 @@ function setup(){
  // background(240,0,0);
 }
 function draw(){
-  image(field,0,0);
+  image(field,0,0,1280,720);
 
         for (var g = 0; g < allFlowers.length; g = g+1) {
 allFlowers[g].displayFlower();
