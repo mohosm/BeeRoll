@@ -277,10 +277,10 @@ function Bee() {
 
     this.rot = this.rot+PI/20;
 
-     if(this.xCor>=movBetX2){
+     if(this.xCor>=this.movBetX2){
     this.xDirNeg = true
   }
-      if(this.xCor<=movBetX1){
+      if(this.xCor<=this.movBetX1){
     this.xDirNeg = false
   }
   if (this.xDirNeg == false){
@@ -289,10 +289,10 @@ function Bee() {
   };
 
 
-if(this.yCor>=movBetY2){
+if(this.yCor>=this.movBetY2){
     this.yDirNeg = true
   }
-      if(this.yCor<=movBetY1){
+      if(this.yCor<=this.movBetY1){
     this.yDirNeg = false
   }
   if (this.yDirNeg == false){
