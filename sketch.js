@@ -116,7 +116,7 @@ function mouseClicked(){
     allBees[k].selected = false;
   }
   for (var i = 0; i < allBees.length; i = i+1) {
-    if(mouseX<allBees[i].xCor+50 && mouseX>allBees[i].xCor-30 &&mouseY<allBees[i].yCor+50 && mouseY>allBees[i].yCor-30 && inspectorBoo == true){
+    if(mouseX<allBees[i].xCor+50 && mouseX>allBees[i].xCor-30 &&mouseY<allBees[i].yCor+50 && mouseY>allBees[i].yCor-30 && inspectorBoo == true && allBees[i].isDead == false){
     allBees[i].selected = true;
     texy = allBees[i].fn +" "+'"'+allBees[i].nn+'"'+" "+allBees[i].ln+"\n"+allBees[i].s11+" "+allBees[i].s22+" "+allBees[i].s33;
     i=allBees.length;
@@ -322,14 +322,14 @@ if(this.yCor>=this.movBetY2){
       this.yCor = this.yCor -random(-3,10) 
   };
 
-
-}
-      if(this.selected == true){
+if(this.selected == true){
           strokeWeight(1);
           fill(0,255,0);
           ellipse(hiveXs[this.index2],hiveYs[this.index2],30,30);
           ellipse(flowerXs[this.index1],flowerYs[this.index1],30,30);
           }
+}
+      
 }
 
 this.Update = function(){
