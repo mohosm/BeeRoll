@@ -324,7 +324,12 @@ if(this.yCor>=this.movBetY2){
 
 
 }
-
+      if(this.selected == true){
+          strokeWeight(1);
+          fill(0,255,0);
+          ellipse(hiveXs[this.index2],hiveYs[this.index2],30,30);
+          ellipse(flowerXs[this.index1],flowerYs[this.index1],30,30);
+          }
 }
 
 this.Update = function(){
@@ -375,12 +380,7 @@ if(allFlowers.length == 0 && allHives.length == 0){
           this.movBetY2 = flowerYs[this.index1];
         
       }
-                if(this.selected == true){
-          strokeWeight(1);
-          fill(0,255,0);
-          ellipse(hiveXs[this.index2],hiveYs[this.index2],30,30);
-          ellipse(flowerXs[this.index1],flowerYs[this.index1],30,30);
-          }
+
       
 }
 
