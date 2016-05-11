@@ -112,6 +112,9 @@ allBees[i].randomFly();
   }
 }
 function mouseClicked(){
+  for (var k = 0; k < allBees.length; k = k+1) {
+    allBees[k].selected = false;
+  }
   for (var i = 0; i < allBees.length; i = i+1) {
     if(mouseX<allBees[i].xCor+50 && mouseX>allBees[i].xCor-30 &&mouseY<allBees[i].yCor+50 && mouseY>allBees[i].yCor-30 && inspectorBoo == true){
     allBees[i].selected = true;
