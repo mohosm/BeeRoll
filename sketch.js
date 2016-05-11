@@ -4,6 +4,10 @@ var allFlowers = [];
 var firstnames = [];
 var nicknames = [];
 var lastnames = [];
+var hiveXs = [];
+var hiveYs = [];
+var flowerXs = [];
+var flowerYs = [];
 var s1s = [];
 var s2s = [];
 var s3s = [];
@@ -85,6 +89,7 @@ for (var i = 0; i < allBees.length; i = i+1) {
   if(allFlowers.length == 0 && allHives.length == 0){
 allBees[i].randomFly();
 } else if (allFlowers.length == 0 && allHives.length > 0){
+  
   
 } else if (allFlowers.length > 0 && allHives.length == 0){
   
@@ -176,8 +181,15 @@ if (mouseX> width-400 && mouseY > height-150){
       allBees.push(new Bee());
   } else if (addbeeBoo == false && beehiveBoo == true && flowerBoo == false && killbeeBoo == false && inspectorBoo == false){
     allHives.push(new Hives());
+    for (var l = 0; l < allBees.length; l = l+1) {
+    allBees[l].Update();
+    }
+    
   } else if(addbeeBoo == false && beehiveBoo == false && flowerBoo == true && killbeeBoo == false && inspectorBoo == false){
     allFlowers.push(new Flower());
+    for (var l = 0; l < allBees.length; l = l+1) {
+    allBees[l].Update();
+    }
   } else if(addbeeBoo == false && beehiveBoo == false && flowerBoo == false && killbeeBoo == true && inspectorBoo == false){
     println("time to kill");
     for (var i = 0; i < allBees.length; i = i+1) {
@@ -198,6 +210,8 @@ if (mouseX> width-400 && mouseY > height-150){
 function Hives(){
   this.xHive=mouseX;
   this.yHive=mouseY;
+  hiveXs.push(this.xHive);
+  hiveYs.push(this.yHive);
   
   this.displayHive = function(){
     image(hive1,this.xHive,this.yHive,70,100);
@@ -208,6 +222,10 @@ function Hives(){
 function Flower(){
   this.xFlo=mouseX;
   this.yFlo=mouseY;
+  
+  flowerXs.push(this.xFlo);
+  flowerYs.push(this.yFlo);
+  
     this.displayFlower = function(){
     image(flower1,this.xFlo,this.yFlo,60,100);
   }
@@ -248,6 +266,8 @@ function Bee() {
     this.movBetX2 = width;
     this.movBetY1 = 0;
     this.movBetY2 = height;
+    this.index1;
+    this.index2;
     
 
 
@@ -303,5 +323,34 @@ if(this.yCor>=this.movBetY2){
 
 }
 
+}
+
+this.Update = function(){
+if(allFlowers.length == 0 && allHives.length == 0){
+    this.movBetX1 = 0;
+    this.movBetX2 = width;
+    this.movBetY1 = 0;
+    this.movBetY2 = height;
+} else if (allFlowers.length == 0 && allHives.length > 0){
+  this.index1= random(hiveXs.length);
+  this.index2=random(hiveYs.length);
+  this.movBetX1 = hiveXs[this.index1];
+  this.movBetX2 = hiveXs[this.index1];
+  this.movBetY1 = hiveYs[this.index2];
+  this.movBetY2 = hiveYs[this.index2];
+  
+  
+} else if (allFlowers.length > 0 && allHives.length == 0){
+    this.index1= random(flowerXs.length);
+  this.index2=random(flowerYs.length);
+  this.movBetX1 = flowerXs[this.index1];
+  this.movBetX2 = flowerXs[this.index1];
+  this.movBetY1 = flowerYs[this.index2];
+  this.movBetY2 = flowerYs[this.index2];
+  
+} else if (allFlowers.length > 0 && allHives.length > 0){
+}
+  
+}
 }
 }
