@@ -353,4 +353,3 @@ if(allFlowers.length == 0 && allHives.length == 0){
   
 }
 }
-}
