@@ -328,20 +328,18 @@ if(allFlowers.length == 0 && allHives.length == 0){
     this.movBetY2 = height;
 } else if (allFlowers.length == 0 && allHives.length > 0){
   this.index1= floor(random(hiveXs.length));
-  this.index2=floor(random(hiveYs.length));
-  this.movBetX1 = hiveXs[this.index1]+10;
-  this.movBetX2 = hiveXs[this.index1]+20;
-  this.movBetY1 = hiveYs[this.index2];
-  this.movBetY2 = hiveYs[this.index2];
+  this.movBetX1 = hiveXs[this.index1];
+  this.movBetX2 = hiveXs[this.index1];
+  this.movBetY1 = hiveYs[this.index1];
+  this.movBetY2 = hiveYs[this.index1];
   
   
 } else if (allFlowers.length > 0 && allHives.length == 0){
     this.index1= floor(random(flowerXs.length));
-  this.index2=floor(random(flowerYs.length));
-  this.movBetX1 = flowerXs[this.index1]+10;
-  this.movBetX2 = flowerXs[this.index1]+20;
-  this.movBetY1 = flowerYs[this.index2];
-  this.movBetY2 = flowerYs[this.index2];
+  this.movBetX1 = flowerXs[this.index1];
+  this.movBetX2 = flowerXs[this.index1];
+  this.movBetY1 = flowerYs[this.index1];
+  this.movBetY2 = flowerYs[this.index1];
   
 } else if (allFlowers.length > 0 && allHives.length > 0){
 }
