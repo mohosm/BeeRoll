@@ -60,7 +60,7 @@ function setup(){
   }
 
   
-  field = loadImage("field.jpg");
+  field = loadImage("field.png");
   toolbar = loadImage("toolbar.png");
   b1 = loadImage("bee1.png");
   b2 = loadImage("bee2.png");
