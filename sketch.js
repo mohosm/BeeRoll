@@ -336,8 +336,8 @@ if(allFlowers.length == 0 && allHives.length == 0){
   
   
 } else if (allFlowers.length > 0 && allHives.length == 0){
-    this.index1= random(flowerXs.length);
-  this.index2=random(flowerYs.length);
+    this.index1= floor(random(flowerXs.length));
+  this.index2=floor(random(flowerYs.length));
   this.movBetX1 = flowerXs[this.index1];
   this.movBetX2 = flowerXs[this.index1];
   this.movBetY1 = flowerYs[this.index2];
