@@ -171,6 +171,9 @@ if (mouseX> width-400 && mouseY > height-150){
 }else{  
   if (addbeeBoo == true && beehiveBoo == false && flowerBoo == false && killbeeBoo == false && inspectorBoo == false){
       allBees.push(new Bee());
+    for (var l = 0; l < allBees.length; l = l+1) {
+    allBees[l].Update();
+    }
   } else if (addbeeBoo == false && beehiveBoo == true && flowerBoo == false && killbeeBoo == false && inspectorBoo == false){
     allHives.push(new Hives());
     for (var l = 0; l < allBees.length; l = l+1) {
@@ -254,10 +257,10 @@ function Bee() {
     
   println(this.fn,"'",this.nn,"'",this.ln,"-",this.s11,this.s22,this.s33);
     this.isDead = false;
-    this.movBetX1 = 0;
-    this.movBetX2 = width;
-    this.movBetY1 = 0;
-    this.movBetY2 = height;
+    this.movBetX1;
+    this.movBetX2;
+    this.movBetY1;
+    this.movBetY2;
     this.index1;
     this.index2;
     
