@@ -36,7 +36,7 @@ var texy = "";
 
 
 function preload(){
-  createCanvas(width,height);
+  createCanvas(1280,720);
  // beeSound = loadSound("bee.mp3");
  data_table = loadTable("data.csv", "csv","header");
 
