@@ -1,14 +1,228 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <script language="javascript" type="text/javascript" src="p5/p5.js"></script>
-  <!-- uncomment lines below to include extra p5 libraries -->
-	<!--<script language="javascript" src="../addons/p5.dom.js"></script>-->
-  <!--<script language="javascript" src="../addons/p5.sound.js"></script>-->
-  <script language="javascript" type="text/javascript" src="sketch.js"></script>
-  <!-- this line removes any default padding and style. you might only need one of these values set. -->
-  <style> body {padding: 0; margin: 0;} </style>
-</head>
-
+<meta charset="utf-8" />
+<script src="https://d3js.org/d3.v4.js"></script>
+<header></header>
 <body>
+
+  <h2>Az amerikai hadsereg németországi állománya</h2>
+<div id="my_dataviz"></div>
+<div id=#signs>
+<p><span id="red">-</span> Aktívan szolgálatot teljesítők</p>
+<p><span id="blue">-</span> Civil dolgozók</p>
+<p><span id="green">-</span>Készenléti erők</p>
+</div>
+<script>
+var margin = {top: 10, right: 30, bottom: 30, left: 60},
+    width = 1000 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+var svg = d3.select("#my_dataviz")
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+d3.csv("https://raw.githubusercontent.com/mohosm/RFE_stuff/master/germany_deployment.csv",
+
+  function(d){
+    return { date : d3.timeParse("%Y")(d.Year), active : d.Active, reserve : d.Reserve, civilian : d.Civilian, total : d.Total }
+  },
+
+
+  function(data) {
+    console.log(data)
+    var x = d3.scaleTime()
+      .domain(d3.extent(data, function(d) {
+        return d.date; }))
+      .range([ 0, width -100 ]);
+    svg.append("g")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+
+    var y = d3.scaleLinear()
+      .domain([0, d3.max(data, function(d) { return +d.active; })])
+      .range([ height, 100 ]);
+    svg.append("g")
+      .call(d3.axisLeft(y));
+
+    svg.append("path")
+      .datum(data)
+      .attr("fill", "none")
+      .attr("stroke", "red")
+      .attr("stroke-width", 1.5)
+      .attr("d", d3.line()
+        .x(function(d) { return x(d.date) })
+        .y(function(d) { return y(d.active) })
+        )
+
+
+    svg.append("path")
+      .datum(data)
+      .attr("fill", "none")
+      .attr("stroke", "green")
+      .attr("stroke-width", 1.5)
+      .attr("d", d3.line()
+        .x(function(d) { return x(d.date) })
+        .y(function(d) { return y(d.reserve) })
+        )
+    svg.append("path")
+      .datum(data)
+      .attr("fill", "none")
+      .attr("stroke", "blue")
+      .attr("stroke-width", 1.5)
+      .attr("d", d3.line()
+        .x(function(d) { return x(d.date) })
+        .y(function(d) { return y(d.civilian) })
+        )
+    svg.append("g").selectAll("text")
+    .data(data)
+    .enter()
+    .append("text")
+    .attr("x", function(d) { return x(d.date)})
+    .attr("y", function(d) { return y(d.active)-20})
+    .attr("fill", "black")
+    .attr("font-size", function(d){
+      if (d.active === "25000"){
+        return 18;
+      } else {
+        console.log(d.active);
+        return 14;
+      }
+    })
+    .attr("font-weight", function(d){
+      if (d.active === "25000"){
+        console.log(d.active);
+        return "bold";
+      } else {
+        console.log(d.active);
+        return "normal";
+      }
+    })
+    .attr("padding","white")
+    .text(function(d) { return d.active });
+
+    svg.append("g").selectAll("circle")
+    .data(data)
+    .enter()
+    .append("circle")
+    .attr("cx",function(d){
+      return x(d.date)})
+    .attr("cy",function(d){return y(d.active)})
+    .attr("r",3)
+    .attr("fill","red");
+
+    svg.append("g").selectAll("text")
+    .data(data)
+    .enter()
+    .append("text")
+    .attr("x", function(d) { return x(d.date)})
+    .attr("y", function(d) { return y(d.reserve)-20})
+    .attr("fill", "black")
+    .attr("padding","white")
+    .attr("font-size",14)
+    .text(function(d) {
+      if (d.reserve === "N/A"){
+        return "";
+      }else{
+      return d.reserve;
+      }}
+      );
+
+      svg.append("g").selectAll("circle")
+      .data(data)
+      .enter()
+      .append("circle")
+      .attr("cx",function(d){
+        return x(d.date)})
+      .attr("cy",function(d){return y(d.reserve)})
+      .attr("r",function(d){
+        if (d.reserve === "N/A"){
+          return 0;
+        }else{
+        return 3;
+      }})
+      .attr("fill","green");
+
+
+    svg.append("g").selectAll("text")
+    .data(data)
+    .enter()
+    .append("text")
+    .attr("x", function(d) {
+       return x(d.date)})
+    .attr("y", function(d) { return y(d.civilian)-20})
+    .attr("fill", "black")
+    .attr("padding","white")
+    .attr("font-size",14)
+    .text(function(d) {
+      if (d.civilian === "N/A"){
+        return "";
+      }else{
+      return d.civilian;
+    }
+   });
+
+   svg.append("g").selectAll("circle")
+   .data(data)
+   .enter()
+   .append("circle")
+   .attr("cx",function(d){
+     return x(d.date)})
+   .attr("cy",function(d){return y(d.civilian)})
+   .attr("r",function(d){
+     if (d.civilian === "N/A"){
+       return 0;
+     }else{
+     return 3;
+   }})
+   .attr("fill","blue");
+
+
+})
+
+</script>
 </body>
+<style>
+  body{
+  background-color: #F5F5DC;
+}
+#my_dataviz{
+  position: fixed;
+  top: 50px;
+  margin-left: 20%;
+}
+h2{
+  position: fixed;
+  top: 50px;
+  left: 35%;
+  text-align: center;
+}
+#red{
+  height: 12px;
+  font-size: 100px;
+  line-height: 12px;
+  color: red;
+}
+#blue{
+  font-size: 100px;
+  color: blue;
+  line-height: 12px;
+}
+#green{
+  font-size: 100px;
+  color: green;
+  line-height: 12px;
+}
+p{
+  vertical-align: text-top;
+}
+
+#signs{
+  position: fixed;
+  top: 300px;
+  left: 100px;
+}
+  </style>
 </html>
